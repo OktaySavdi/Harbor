@@ -125,10 +125,6 @@ mkdir -p /etc/docker/certs.d/harbor-registry.com/
 cp harbor-registry.com.cert /etc/docker/certs.d/harbor-registry.com/
 cp ca.crt /etc/docker/certs.d/harbor-registry.com/
 ```
-**9. Restart docker**  
-```bash
-systemctl restart docker
-```
 ## Deploy Harbor
 
 To deploy Harbor, first we need to do some configuration changes in harbor.yml file. In the extracted harbor directory, you’ll find a file named harbor.yml.tmpl. We have to first take a copy of that file and create our own yml file.
@@ -160,6 +156,11 @@ vim /etc/docker/daemon.json
  ]
 }
 ```
+**Restart docker**  
+```bash
+systemctl daemon-reload
+systemctl restart docker
+```
 **Add registery name on hosts file**
 ```bash
 cat /etc/hosts
@@ -178,8 +179,10 @@ For first time installation you don’t need to do the down step. Then we have t
 -   `docker-compose up -d`
 
 Then we can do the docker login.
-
-`user: admin` and `password: Harbor12345`
+```
+user: admin 
+password: Harbor12345
+```
 ```bash
 docker login harbor-registry.com
 ```
