@@ -119,10 +119,10 @@ cp harbor-registry.com.key /data/cert/
 ```
 **8. For docker to use this cert we need to convert .crt to .cert. Then we need to move them to the appropriate folder.**  
 ```bash
-openssl x509 -inform PEM -in harbor-registry.com.crt -out harbor-registry.com.certcp harbor-registry.com.cert /etc/docker/certs.d/harbor-registry.com/
+openssl x509 -inform PEM -in harbor-registry.com.crt -out harbor-registry.com.cert
 
-mkdir /etc/docker/certs.d/harbor-registry.com/
-cp harbor-registry.com.key /etc/docker/certs.d/harbor-registry.com/
+mkdir -p /etc/docker/certs.d/harbor-registry.com/
+cp harbor-registry.com.cert /etc/docker/certs.d/harbor-registry.com/
 cp ca.crt /etc/docker/certs.d/harbor-registry.com/
 ```
 **9. Restart docker**  
