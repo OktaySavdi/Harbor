@@ -25,10 +25,9 @@ To get the latest stable release, we can run below command.
 sudo yum install docker-ce docker-ce-cli containerd.io
 ```
 
-Then we have finished installing docker engine. We have to start and test it by running two below commands.
+Then we have finished installing docker engine. We have to start it below commands.
 ```bash
 sudo systemctl start docker
-sudo docker run nginx
 ```
 ## Install Docker Compose
 
