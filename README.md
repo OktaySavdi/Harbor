@@ -60,7 +60,7 @@ wget https://github.com/goharbor/harbor/releases/download/v2.2.1/harbor-online-i
 ```
 ## Extract the downloaded file_** 
 ```bash
-tar xvf harbor-online-installer-v2.0.0.tgz
+tar xvf harbor-online-installer-v2.2.1.tgz
 ```
 Now we have got the installer. Then we’ll add the HTTPS access to the repository. If this is going in production level, we will need a certified authority to sign the certificate. Here I’m generating my own CA.
 
