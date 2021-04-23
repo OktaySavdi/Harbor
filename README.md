@@ -179,12 +179,12 @@ For first time installation you don’t need to do the down step. Then we have t
 -   `docker-compose up -d`
 
 Then we can do the docker login.
+```bash
+docker login harbor-registry.com
+```
 ```
 user: admin 
 password: Harbor12345
-```
-```bash
-docker login harbor-registry.com
 ```
 **_## To test, we'll just get a image_**
 ```bash
