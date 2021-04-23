@@ -192,7 +192,7 @@ docker pull busybox
 ```
 **_## Then to push it into our registry,_**  
 ```bash
-docker tag busybox:latest harbor-registry.com/deneme/busybox:latest
+docker tag busybox:latest harbor-registry.com/library/busybox:latest
 ```
 Now you can go to the browser and check the image in the repository.
 
@@ -208,4 +208,6 @@ password: Harbor12345
 
 ![image](https://user-images.githubusercontent.com/3519706/115871211-ed411c80-a448-11eb-9fb6-054646881648.png)
 
-![image](https://user-images.githubusercontent.com/3519706/115871487-4b6dff80-a449-11eb-93f6-0c85b3459a23.png)
+![proje](https://user-images.githubusercontent.com/59168275/115874877-4e6aef00-a44d-11eb-8261-781af785d7ec.png)
+
+![library](https://user-images.githubusercontent.com/59168275/115874887-5034b280-a44d-11eb-929b-93003d559cdd.png)
