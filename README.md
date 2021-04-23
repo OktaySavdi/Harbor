@@ -135,7 +135,7 @@ To deploy Harbor, first we need to do some configuration changes in harbor.yml f
 ```bash
 cp harbor.yml.tmpl harbor.yml
 ```
-**_## Inside this file change the below parts accordingly._**
+**_## Inside this file change the below parts accordingly. in harbor.yml**
 ```bash
 hostname: harbor-registry  
 ....  
