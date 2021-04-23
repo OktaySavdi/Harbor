@@ -36,11 +36,13 @@ sudo systemctl start docker
 Next prerequisite is Docker compose. The below command gives the latest docker compose and if you want to change the version, just use the relevant version number in the command.
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
+```
 **_## Giving permissions_**  
+```bash
 sudo chmod +x /usr/local/bin/docker-compose
-
+```
 **_## Test installation_**  
+```bash
 docker-compose --version
 ```
 And other than above two requirements, you need to have openSSL in your machine.
