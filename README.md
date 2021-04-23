@@ -192,7 +192,7 @@ docker pull busybox
 ```
 **_## Then to push it into our registry,_**  
 ```bash
-docker tag busybox:latest harbor-registry.com/myExampleProject/busybox:latest
+docker tag busybox:latest harbor-registry.com/deneme/busybox:latest
 ```
 Now you can go to the browser and check the image in the repository.
 
