@@ -170,9 +170,16 @@ For first time installation you don’t need to do the down step. Then we have t
 
 Then we can do the docker login.
 
+`user: admin`
+`password: Harbor12345`
+```bash
 docker login harbor-registry.com
-
-**_## To test, we'll just get a image_**docker pull busybox**_## Then to push it into our registry,_**  
+```
+**_## To test, we'll just get a image_**
+```bash
+docker pull busybox
+```
+**_## Then to push it into our registry,_**  
 ```bash
 docker tag busybox:latest harbor-registry.com/myExampleProject/busybox:latest
 ```
@@ -183,12 +190,11 @@ To pull the docker image,
 docker push harbor-registry.com/myExampleProject/busybox:latest
 ```
 
+**#Harbor Console**
 
+user: admin
+password: Harbor12345
 
+![image](https://user-images.githubusercontent.com/3519706/115871211-ed411c80-a448-11eb-9fb6-054646881648.png)
 
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/3519706/115871487-4b6dff80-a449-11eb-93f6-0c85b3459a23.png)
