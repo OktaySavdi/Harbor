@@ -179,8 +179,7 @@ For first time installation you don’t need to do the down step. Then we have t
 
 Then we can do the docker login.
 
-`user: admin`
-`password: Harbor12345`
+`user: admin` and `password: Harbor12345`
 ```bash
 docker login harbor-registry.com
 ```
