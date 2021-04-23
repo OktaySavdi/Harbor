@@ -6,7 +6,7 @@ Before going in to installation details, why Harbor? The reasons for us to choos
 
 If there are any other installation for docker exist in the server, we need to first uninstall them.
 ```bash
-sudo yum remove docker \  
+sudo yum -y remove docker \  
                   docker-client \  
                   docker-client-latest \  
                   docker-common \  
@@ -17,12 +17,14 @@ sudo yum remove docker \
 ```
 Then we have to setup our repository.
 ```bash
-sudo yum install -y yum-utilssudo yum-config-manager \  
+sudo yum install -y yum-utils 
+
+sudo yum-config-manager \  
     --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 To get the latest stable release, we can run below command.
 ```bash
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 ```
 
 Then we have finished installing docker engine. We have to start it below commands.
@@ -33,8 +35,12 @@ sudo systemctl start docker
 
 Next prerequisite is Docker compose. The below command gives the latest docker compose and if you want to change the version, just use the relevant version number in the command.
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose**_## Giving permissions_**  
-sudo chmod +x /usr/local/bin/docker-compose**_## Test installation_**  
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+**_## Giving permissions_**  
+sudo chmod +x /usr/local/bin/docker-compose
+
+**_## Test installation_**  
 docker-compose --version
 ```
 And other than above two requirements, you need to have openSSL in your machine.
