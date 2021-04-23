@@ -6,13 +6,13 @@ Before going in to installation details, why Harbor? The reasons for us to choos
 
 If there are any other installation for docker exist in the server, we need to first uninstall them.
 ```bash
-sudo yum -y remove docker \  
-                  docker-client \  
-                  docker-client-latest \  
-                  docker-common \  
-                  docker-latest \  
-                  docker-latest-logrotate \  
-                  docker-logrotate \  
+sudo yum -y remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
                   docker-engine
 ```
 Then we have to setup our repository.
