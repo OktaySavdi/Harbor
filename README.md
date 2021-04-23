@@ -19,7 +19,7 @@ Then we have to setup our repository.
 ```bash
 sudo yum install -y yum-utils 
 
-sudo yum-config-manager \  
+sudo yum-config-manager \
     --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 To get the latest stable release, we can run below command.
@@ -72,9 +72,9 @@ openssl genrsa -out ca.key 4096
 ```
 **2. Generate CA certificate (Change the values accordingly)**  
 ```bash
-openssl req -x509 -new -nodes -sha512 -days 3650 \  
--subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" **\  
--key ca.key \  
+openssl req -x509 -new -nodes -sha512 -days 3650 \
+-subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" \
+-key ca.key \
 -out ca.crt
 ```
 **3. Generate server certificate(Change the values accordingly)**  
@@ -83,9 +83,9 @@ openssl genrsa -out harbor-registry.com.key 4096
 ```
 **4. Generate certificate signing request(Change the values accordingly)**  
 ```bash
-openssl req -sha512 -new \  
--subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" **\  
--key harbor-registry.com.key **\  
+openssl req -sha512 -new \
+-subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" \
+-key harbor-registry.com.key \
 -out harbor-registry.com.csr
 ```
 **5. Generate an x509 v3 extension file.(Change the values accordingly)**  
@@ -105,24 +105,24 @@ EOF
 ```
 **6. Use above file to generate certificate.(Change the values accordingly)**  
 ```bash
-openssl x509 -req -sha512 -days 3650 \  
--extfile v3.ext \  
--CA ca.crt -CAkey ca.key -CAcreateserial \  
--in harbor-registry.com.csr \  
+openssl x509 -req -sha512 -days 3650 \
+-extfile v3.ext \
+-CA ca.crt -CAkey ca.key -CAcreateserial \
+-in harbor-registry.com.csr \
 -out harbor-registry.com.crt
 ```
 **7. Provide the certificates for Harbor.**  
 ```bash
 mkdir -p /data/cert/ 
-cp harbor-registry.com.crt /data/cert/  
+cp harbor-registry.com.crt /data/cert/
 cp harbor-registry.com.key /data/cert/
 ```
 **8. For docker to use this cert we need to convert .crt to .cert. Then we need to move them to the appropriate folder.**  
 ```bash
-openssl x509 -inform PEM -in harbor-registry.com.crt -out harbor-registry.com.certcp harbor-registry.com.cert /etc/docker/certs.d/harbor-registry.com/ 
+openssl x509 -inform PEM -in harbor-registry.com.crt -out harbor-registry.com.certcp harbor-registry.com.cert /etc/docker/certs.d/harbor-registry.com/
 
 mkdir /etc/docker/certs.d/harbor-registry.com/
-cp harbor-registry.com.key /etc/docker/certs.d/harbor-registry.com/  
+cp harbor-registry.com.key /etc/docker/certs.d/harbor-registry.com/
 cp ca.crt /etc/docker/certs.d/harbor-registry.com/
 ```
 **9. Restart docker**  
