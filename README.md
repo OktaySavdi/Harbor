@@ -33,9 +33,11 @@ sudo systemctl start docker
 ```
 ## Install Docker Compose
 
+Docker Compose Release - [enter link description here](https://github.com/docker/compose/releases)
+
 Next prerequisite is Docker compose. The below command gives the latest docker compose and if you want to change the version, just use the relevant version number in the command.
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 **_## Giving permissions_**  
 ```bash
