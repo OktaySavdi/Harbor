@@ -73,7 +73,7 @@ openssl genrsa -out ca.key 4096
 **2. Generate CA certificate (Change the values accordingly)**  
 ```bash
 openssl req -x509 -new -nodes -sha512 -days 3650 \
--subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" \
+-subj "/C=CN/ST=Harbor/L=Harbor/O=BBVA/OU=OS/CN=harbor-registry.com" \
 -key ca.key \
 -out ca.crt
 ```
@@ -84,7 +84,7 @@ openssl genrsa -out harbor-registry.com.key 4096
 **4. Generate certificate signing request(Change the values accordingly)**  
 ```bash
 openssl req -sha512 -new \
--subj "/C=CN/ST=Colombo/L=Colombo/O=Organization/OU=Personal/CN=harbor-registry.com" \
+-subj "/C=CN/ST=Harbor/L=Harbor/O=BBVA/OU=OS/CN=harbor-registry.com" \
 -key harbor-registry.com.key \
 -out harbor-registry.com.csr
 ```
