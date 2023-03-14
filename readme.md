@@ -46,3 +46,10 @@ helm install myharbor bitnami/harbor -f values.yaml
 ```
 kubectl get secret -n <NAMESPACE> <SECRET NAME - harbor-core-envvars> -o jsonpath='{.data.HARBOR_ADMIN_PASSWORD}'| base64 --decode
 ```
+
+URL - https://artifacthub.io/packages/helm/bitnami/harbor
+
+URL - https://goharbor.io/docs/
+
+![image](https://user-images.githubusercontent.com/3519706/224947295-1c6f533c-ee2a-4086-90be-bd1c95f3d08d.png)
+
