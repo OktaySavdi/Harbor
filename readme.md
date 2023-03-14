@@ -29,8 +29,6 @@ kubectl create secret generic <NAME> --from-file=tls.crt=<PATH  TO  CRT> --from-
 
 kubectl create secret generic my-harbor-crt --from-file=tls.crt=server.crt --from-file=tls.key=server.key --from-file=ca.crt=ca.crt
 ```
-  
-
 ### Add repo and install Harbor via heml chart
 ```
 helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -46,7 +44,12 @@ helm install myharbor bitnami/harbor -f values.yaml
 ```
 kubectl get secret -n <NAMESPACE> <SECRET NAME - harbor-core-envvars> -o jsonpath='{.data.HARBOR_ADMIN_PASSWORD}'| base64 --decode
 ```
-
+### Login via CLI
+```
+podman login myharbor.com -u <user> -p '<password>' --tls-verify=false
+podman pull quay.io/oktaysavdi/istioproject
+podman push quay.io/oktaysavdi/istioproject myharbor.com/library/istio:latest --tls-verify=false
+```
 URL - https://artifacthub.io/packages/helm/bitnami/harbor
 
 URL - https://goharbor.io/docs/
